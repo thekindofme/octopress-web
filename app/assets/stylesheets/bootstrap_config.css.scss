@@ -1,0 +1,8 @@
+// Custom bootstrap config variable go here (before the bootstrap import)
+
+// Import bootstrap provided by bootstrap-sass engine
+@import "bootstrap";
+
+#main {
+  margin-top: 40px;
+}

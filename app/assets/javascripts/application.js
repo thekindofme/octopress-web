@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+
+// Loads all Bootstrap javascripts (from bootstrap-sass engine)
+//= require bootstrap
+
 //= require_tree .
