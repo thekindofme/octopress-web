@@ -1,6 +1,6 @@
 Octapass::Application.routes.draw do
 
-  resources :posts, only: :new
+  resources :posts
 
-  root to:"posts#new"
+  root to:"posts#index"
 end

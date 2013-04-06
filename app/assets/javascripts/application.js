@@ -17,3 +17,6 @@
 //= require bootstrap
 
 //= require_tree .
+//= require_self
+
+window.octa={};

@@ -77,3 +77,6 @@ gem 'inherited_resources'
 
 # use thin instead of webrick
 gem 'thin'
+
+# Octopress stuff
+gem 'stringex', '~> 1.4.0'

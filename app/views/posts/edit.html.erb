@@ -1,0 +1,21 @@
+<div class="row-fluid">
+  <div class="span6">
+    <form id="post_form">
+      <fieldset>
+        <legend>Edit Post</legend>
+        <label>Post Body (Markdown)</label>
+        <textarea name="post[content]" id="post_content" rows="30" cols="50" placeholder="Type something…"><%= @post.content %></textarea>
+        <span class="help-block">Write your post here. And the preview will be shown in the opposite pane</span>
+        <button id="save-content-btn" type="submit" class="btn">Force Update</button>
+      </fieldset>
+    </form>
+  </div>
+  <div class="span6">
+    <iframe id="preview"></iframe>
+  </div>
+</div>
+
+<script>
+    window.octa.preview_url="<%= @post.preview_url %>";
+    window.octa.post_update_url="<%= post_url(@post) %>";
+</script>

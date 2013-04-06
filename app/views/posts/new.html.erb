@@ -1,2 +1,29 @@
+<%= form_for(@post) do |f| %>
+    <!-- Error handler -->
+    <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-<p>Find me in app/views/posts/new.html.erb</p>
+          <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="control-group">
+      <div class="controls">
+        <div class="input-append">
+          <%= f.text_field :title, :class => "input-block-level", :placeholder => "Zombie Ninjas Attack: A survivor's retrospective", style:"width:700px" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit %>
+      </div>
+    </div>
+
+<% end %>
