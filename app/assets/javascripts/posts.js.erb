@@ -1,6 +1,8 @@
 $(function(){
     var updatePreview=function(){
-        $('#preview')[0].src=window.octa.preview_url;
+        if($("#auto_refresh").is(':checked')) {
+            $('#preview')[0].src=window.octa.preview_url;
+        }
     };
 
     updatePreview();

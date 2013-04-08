@@ -2,12 +2,11 @@ require "stringex"
 
 class Post < ActiveRecord::Base
   attr_accessible :title, :content
+  belongs_to :blog
   after_create :create_post
 
   extend FriendlyId
   friendly_id :title, use: :slugged
-
-  ROOT_PATH="/Users/yasith/source/octopress_test/source/_posts/"
 
   def preview_url
     "http://localhost:4000/blog/#{self.created_at.strftime('%Y/%m/%d')}/#{self.title.to_url}/"
@@ -18,7 +17,7 @@ class Post < ActiveRecord::Base
   end
 
   def full_path
-    "#{ROOT_PATH}#{file_name}"
+    "#{self.blog.source_posts_path}#{file_name}"
   end
 
   def content

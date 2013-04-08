@@ -1,5 +1,30 @@
 <%= link_to "Octa", root_path, :class => 'brand' %>
-<ul class="nav">
-  <li><%= link_to 'New Post', new_post_path %></li>
-  <li><%= link_to 'Posts', posts_path %></li>
+<ul class="nav" role="navigation">
+  <li class="dropdown">
+    <a id="postsdrop" class="dropdown-toggle" data-toggle="dropdown" href="#">Posts</a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="postsdrop">
+      <li><%= link_to 'New Post', new_post_path %></li>
+      <li><%= link_to 'List all Posts', posts_path %></li>
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a id="blogsdrop" class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs</a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="blogsdrop">
+      <li><%= link_to 'New Blog', new_blog_path %></li>
+      <li><%= link_to 'List all Blogs', blogs_path %></li>
+      <li><%= link_to 'Deploy current blog', deploy_blog_path(@current_blog) %></li>
+    </ul>
+  </li>
+</ul>
+
+<ul class="nav pull-right">
+  <li id="fat-menu" class="dropdown">
+    <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Current Blog: <%= @current_blog.name %><b class="caret"></b></a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+      <% @blogs.each do |b| %>
+          <li role="presentation"><%= link_to b.name, select_blog_path(b), role:"menuitem" %></li>
+      <% end %>
+    </ul>
+  </li>
 </ul>

@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <caption>Blogs</caption>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Path</th>
+    <th>Created At</th>
+    <th>Updated At</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @blogs.each do |blog| %>
+  <tr>
+    <td><%=	blog.name %></td>
+    <td><%=	blog.path %></td>
+    <td><%=	blog.created_at %></td>
+    <td><%=	blog.updated_at %></td>
+    <td><%=	link_to("Delete", blog_path(blog), :method => :delete) %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

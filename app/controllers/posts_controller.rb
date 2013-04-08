@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post])
+    @post.blog = current_blog
 
     if @post.save
       flash[:notice]="Post successfully created. Start editing!"

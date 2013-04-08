@@ -20,3 +20,5 @@
 //= require_self
 
 window.octa={};
+
+$('.dropdown-toggle').dropdown();
